@@ -1,16 +1,17 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : main.c
-  * @brief          : CAN Receiver - 接收端程序
-  ******************************************************************************
-  * @attention
+  * @file    main.c
+  * @brief   CAN 接收端 (500kbps, IDLIST 过滤 0x100)
+  * @date    2026-08-04
   *
-  * 功能：STM32F103C8 作为CAN接收端，收到数据后串口打印+LED翻转
-  * CAN配置：500kbps，Normal模式，过滤器全通
-  * 串口：9600，用于调试输出（降低波特率提高容错）
-  * 时钟：使用外部HSE（8MHz）经PLL倍频到72MHz
+  * @hardware  STM32F103C8T6 + SN65HVD230
+  * @clock     HSE 8MHz → PLL ×9 → 72MHz, APB1 = 36MHz
+  * @baudrate  500 kbps (Prescaler=9, BS1=6, BS2=1)
+  * @filter    IDLIST, 仅接收标准 ID 0x100
+  * @debug     USART1 115200-8-N-1
   *
+  * @note      PA13/PA14 务必保持 Serial Wire 模式，否则 SWD 接口会被锁死
   ******************************************************************************
   */
 /* USER CODE END Header */
@@ -211,3 +212,4 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
