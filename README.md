@@ -54,11 +54,21 @@
 
 ## 工程结构
 CAN_Receiver/
-  ├── Core/
-  │ ├── Inc/ # 头文件
-  │ └── Src/ # 源文件（main.c, can.c, usart.c 等）
-  ├── Drivers/ # HAL 库驱动
-  └── Debug/ # 编译输出
+├── Core/
+│   ├── Inc/               # 头文件
+│   │   ├── main.h
+│   │   ├── can.h
+│   │   ├── usart.h
+│   │   └── gpio.h
+│   └── Src/               # 源文件
+│       ├── main.c
+│       ├── can.c
+│       ├── usart.c
+│       └── gpio.c
+├── Drivers/               # HAL 库驱动
+│   ├── CMSIS/
+│   └── STM32F1xx_HAL_Driver/
+└── Debug/                 # 编译输出（已忽略）
   
 ## 作者
 
