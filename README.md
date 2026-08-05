@@ -53,6 +53,8 @@
 使用 CANable + SavvyCAN 模拟发送节点，发送 ID 0x100 的数据帧，接收端串口打印结果与发送数据一致。
 
 ## 工程结构
+
+```text
 CAN_Receiver/
 ├── Core/
 │   ├── Inc/               # 头文件
@@ -69,6 +71,7 @@ CAN_Receiver/
 │   ├── CMSIS/
 │   └── STM32F1xx_HAL_Driver/
 └── Debug/                 # 编译输出（已忽略）
+```
   
 ## 作者
 
